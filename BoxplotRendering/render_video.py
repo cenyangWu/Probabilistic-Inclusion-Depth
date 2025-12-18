@@ -4,7 +4,7 @@ import math
 import time
 
 
-INPUT_GLB_FILE = "/home/guoshudan/Documents/internProject/glb1/professional_smooth_model.glb"
+INPUT_GLB_FILE = "./data/glb/model.glb"
 VIDEO_OUTPUT_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "final_rotation_video2.mp4")
 RENDER_SAMPLES = 256
 FRAME_RATE = 24
@@ -87,7 +87,7 @@ def setup_pure_white_world():
     background.inputs['Strength'].default_value = 6.0  
     links = node_tree.links
     links.new(background.outputs['Background'], output.inputs['Surface'])
-    print("已设置纯白色世界背景。")
+    print("A pure white world background has been set.")
 
 def setup_clean_studio_lighting(model_center, model_size):
    

@@ -7,7 +7,7 @@ import time
 
 
 
-INPUT_GLB_FILE = "/home/guoshudan/Documents/internProject/glb1/professional_smooth_model.glb"
+INPUT_GLB_FILE = "./data/glb/model.glb"
 RENDER_OUTPUT_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "final_glass_render.png")
 RENDER_SAMPLES = 512 
 
@@ -81,7 +81,7 @@ def setup_pure_white_world():
     background.inputs['Strength'].default_value = 6.0  
     links = node_tree.links
     links.new(background.outputs['Background'], output.inputs['Surface'])
-    print("已设置纯白色世界背景。")
+    print("A pure white world background has been set.")
 
 def setup_clean_studio_lighting(model_center, model_size):
    
@@ -151,7 +151,7 @@ def main():
         # {'core_color': (0.900, 0.900, 0.900, 1), 'edge_color': (0.700, 0.700, 0.700, 1), 'fresnel_ior': 1.0},
         {'core_color': (0.892, 0.950, 0.370, 1), 'edge_color': (0.936, 0.949, 0.209, 1), 'fresnel_ior': 1.35},
     ]
-    # 在您的 main 函数中...
+    
 
     
     

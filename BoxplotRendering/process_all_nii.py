@@ -77,7 +77,7 @@ for folder_name in target_folder_name:
 
       
         blender_script_content = blender_script_content.replace(
-            'INPUT_GLB_FILE = "/home/guoshudan/Documents/internProject/glb1/professional_smooth_model.glb"',
+            'INPUT_GLB_FILE = "./data/glb/model.glb"',
             f'INPUT_GLB_FILE = "{glb_path}"'
         )
         
@@ -114,7 +114,7 @@ for folder_name in target_folder_name:
             video_script_content = f_in.read()
 
         video_script_content = video_script_content.replace(
-            'INPUT_GLB_FILE = "/home/guoshudan/Documents/internProject/glb1/professional_smooth_model.glb"',
+            'INPUT_GLB_FILE = "./data/glb/model.glb"',
             f'INPUT_GLB_FILE = "{glb_path}"'
         )
         

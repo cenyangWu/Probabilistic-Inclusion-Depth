@@ -6,7 +6,7 @@ import os
 MODEL_LAYERS = [
   
     # {
-    #     # !!! 请将这里的文件名替换成您第四个文件的实际名称 !!!
+    
     #     'filepath': 'connected_deepest_member_density_member.nii', 
         
     #     'color': [0.2, 0.6, 1.0], 
@@ -29,7 +29,7 @@ MODEL_LAYERS = [
     },
     {
       
-        'filepath': 'deepest_mask_IXI038-Guys-0729_aligned_seg35_LPI.nii', 
+        'filepath': 'deepest_member_swish_TC.nii', 
         
         'color': [0.2, 0.6, 1.0], 
         'isovalue': 0.5,
@@ -38,7 +38,7 @@ MODEL_LAYERS = [
     
 ]
 
-OUTPUT_3D_SCENE_NAME = "professional_smooth_model.glb"
+OUTPUT_3D_SCENE_NAME = "model.glb"
 
 
 def main():
@@ -99,7 +99,7 @@ def main():
         export_renderer.AddActor(actor)
  
     exporter = vtk.vtkGLTFExporter()
-    scene_output_path = os.path.join(script_dir, OUTPUT_3D_SCENE_NAME)
+    scene_output_path = os.path.join(script_dir, "..", "data", "glb", OUTPUT_3D_SCENE_NAME)
     exporter.SetFileName(scene_output_path)
     exporter.SetRenderWindow(export_render_win)
     exporter.Write()
