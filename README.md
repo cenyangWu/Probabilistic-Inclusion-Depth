@@ -4,7 +4,7 @@
 
 Cenyang Wu, Daniel Klötzl, Qinhan Yu, Shudan Guo, Runhao Lin, Daniel Weiskopf, and Liang Zhou†
 
-Welcome to the official repository for **Probabilistic Inclusion Depth (PID)** This project introduces a data depth method for ensemble visualization of scalar fields. By introducing a probabilistic inclusion operator $\subset_{\!p}$, our method supports ensembles of fuzzy contours (such as soft masks from modern segmentation methods) and conventional ensembles of binary contours. PID enables contour boxplot visualization for 3D medical imaging, scalar field ensembles, and probabilistic segmentation outputs.
+Welcome to the official repository for **Probabilistic Inclusion Depth (PID)** This project introduces a data depth method for ensemble visualization of scalar fields. By introducing a probabilistic inclusion operator $\subset_p$, our method supports ensembles of fuzzy contours (such as soft masks from modern segmentation methods) and conventional ensembles of binary contours. PID enables contour boxplot visualization for 3D medical imaging, scalar field ensembles, and probabilistic segmentation outputs.
 
 ![teaser](figures/teaser.pdf)
 
@@ -103,13 +103,13 @@ This generates synthetic contour ensembles and compares multiple depth methods:
 
 For two probabilistic masks $u$ and $v$, the probabilistic inclusion operator is defined as:
 
-$$u \subset_{\p} v := \mathbb{E}_{X\sim \pi_u}[v(X)] = \frac{\int u \cdot v \, d\mu}{\int u \, d\mu} = 1 - \frac{\int u(1-v) \, d\mu}{\int u \, d\mu}$$
+$$u \subset_p v := \mathbb{E}_{X\sim \pi_u}[v(X)] = \frac{\int u \cdot v \, \mathrm{d}\mu}{\int u \, \mathrm{d}\mu} = 1 - \frac{\int u(1-v) \, \mathrm{d}\mu}{\int u \, \mathrm{d}\mu}$$
 
 ### Probabilistic Inclusion Depth (PID)
 
 For an ensemble of $N$ contours with probabilistic masks $\{u_1, u_2, \ldots, u_N\}$:
 
-$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_i\subset_{\!p}u_j), \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_j\subset_{\!p}u_i)$$
+$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_i \subset_p u_j), \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_j \subset_p u_i)$$
 
 $$\mathrm{PID}(c_i) = \min\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i)\}$$
 
@@ -119,7 +119,7 @@ Instead of $O(N^2)$ pairwise comparisons, PID-mean compares each contour only ag
 
 $$\bar{u}(x) = \frac{1}{N}\sum_{i=1}^{N}u_i(x)$$
 
-$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(c_i) = u_i \subset_{\!p} \bar{u}, \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(c_i) = \bar{u} \subset_{\!p} u_i$$
+$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(c_i) = u_i \subset_p \bar{u}, \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(c_i) = \bar{u} \subset_p u_i$$
 
 **Complexity**: $O(MN)$ where $M$ is the number of voxels and $N$ is ensemble size.
 
