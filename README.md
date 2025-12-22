@@ -109,9 +109,9 @@ $$u \subset_p v := \mathbb{E}_{X\sim \pi_u}[v(X)] = \frac{\int u \cdot v \, \mat
 
 For an ensemble of $N$ contours with probabilistic masks $\{u_1, u_2, \ldots, u_N\}$:
 
-$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_i \subset_p u_j), \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_j \subset_p u_i)$$
+$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(u_i) = \frac{1}{N}\sum_{j=1}^{N}(u_i \subset_p u_j), \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(u_i) = \frac{1}{N}\sum_{j=1}^{N}(u_j \subset_p u_i)$$
 
-$$\mathrm{PID}(c_i) = \min\\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i)\\}$$
+$$\mathrm{PID}(u_i) = \min\\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(u_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(u_i)\\}$$
 
 ### PID-Mean (Efficient Linear Approximation)
 
@@ -119,9 +119,9 @@ Instead of pairwise comparisons, PID-mean compares each contour only against the
 
 $$\bar{u}(x) = \frac{1}{N}\sum_{i=1}^{N}u_i(x)$$
 
-$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(c_i) = u_i \subset_p \bar{u}, \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(c_i) = \bar{u} \subset_p u_i$$
+$$\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(u_i) = u_i \subset_p \bar{u}, \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(u_i) = \bar{u} \subset_p u_i$$
 
-$$\mathrm{PID\text{-}mean}(c_i) = \min\\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(c_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(c_i)\\}$$
+$$\mathrm{PID\text{-}mean}(u_i) = \min\\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(u_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(u_i)\\}$$
 
 **Complexity**: $O(MN)$ where $M$ is the number of voxels and $N$ is ensemble size.
 
