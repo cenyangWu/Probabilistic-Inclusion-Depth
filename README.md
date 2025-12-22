@@ -6,7 +6,7 @@ Cenyang Wu, Daniel Klötzl, Qinhan Yu, Shudan Guo, Runhao Lin, Daniel Weiskopf, 
 
 Welcome to the official repository for **Probabilistic Inclusion Depth (PID)** This project introduces a data depth method for ensemble visualization of scalar fields. By introducing a probabilistic inclusion operator $\subset_p$, our method supports ensembles of fuzzy contours (such as soft masks from modern segmentation methods) and conventional ensembles of binary contours. PID enables contour boxplot visualization for 3D medical imaging, scalar field ensembles, and probabilistic segmentation outputs.
 
-![teaser](figures/teaser.pdf)
+![teaser](figures/teaser.png)
 
 
 ## 🚀 Getting Started
