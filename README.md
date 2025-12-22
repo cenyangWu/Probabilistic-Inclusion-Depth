@@ -111,17 +111,21 @@ For an ensemble of $N$ contours with probabilistic masks $\{u_1, u_2, \ldots, u_
 
 $$\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_i \subset_p u_j), \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i) = \frac{1}{N}\sum_{j=1}^{N}(u_j \subset_p u_i)$$
 
-$$\mathrm{PID}(c_i) = \min\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i)\}$$
+$$\mathrm{PID}(c_i) = \min\\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{p}}(c_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{p}}(c_i)\\}$$
 
 ### PID-Mean (Efficient Linear Approximation)
 
-Instead of $O(N^2)$ pairwise comparisons, PID-mean compares each contour only against the mean contour:
+Instead of pairwise comparisons, PID-mean compares each contour only against the mean contour:
 
 $$\bar{u}(x) = \frac{1}{N}\sum_{i=1}^{N}u_i(x)$$
 
 $$\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(c_i) = u_i \subset_p \bar{u}, \quad \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(c_i) = \bar{u} \subset_p u_i$$
 
+$$\mathrm{PID\text{-}mean}(c_i) = \min\\{\mathrm{IN}_{\mathrm{in}}^{\mathrm{mean}}(c_i), \mathrm{IN}_{\mathrm{out}}^{\mathrm{mean}}(c_i)\\}$$
+
 **Complexity**: $O(MN)$ where $M$ is the number of voxels and $N$ is ensemble size.
+
+
 
 
 ## 📖 Citation
