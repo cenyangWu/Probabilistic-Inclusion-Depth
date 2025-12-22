@@ -103,7 +103,7 @@ This generates synthetic contour ensembles and compares multiple depth methods:
 
 For two probabilistic masks $u$ and $v$, the probabilistic inclusion operator is defined as:
 
-$$u \subset_{\!p} v := \mathbb{E}_{X\sim \pi_u}[v(X)] = \frac{\int u \cdot v \, d\mu}{\int u \, d\mu} = 1 - \frac{\int u(1-v) \, d\mu}{\int u \, d\mu}$$
+$$u \subset_{\p} v := \mathbb{E}_{X\sim \pi_u}[v(X)] = \frac{\int u \cdot v \, d\mu}{\int u \, d\mu} = 1 - \frac{\int u(1-v) \, d\mu}{\int u \, d\mu}$$
 
 ### Probabilistic Inclusion Depth (PID)
 
