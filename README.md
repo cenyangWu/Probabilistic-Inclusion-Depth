@@ -1,6 +1,6 @@
 # Probabilistic Inclusion Depth for Fuzzy Contour Ensemble Visualization
 
-#### [Project Page](https://github.com/cenyangWu/Probabilistic-Inclusion-Depth) | [arXiv Paper](https://arxiv.org/abs/2512.15187)
+#### [Project Page](https://github.com/cenyangWu/Probabilistic-Inclusion-Depth) | [TVCG Paper](https://arxiv.org/abs/2512.15187)
 
 Cenyang Wu, Daniel Klötzl, Qinhan Yu, Shudan Guo, Runhao Lin, Daniel Weiskopf, and Liang Zhou†
 
@@ -65,7 +65,7 @@ Probabilistic-Inclusion-Depth/
  │       ├─ sample2/
  │       │   └─ *TC*.nii.gz
  │       └─ ...
- ├─ BoxplotRendering/           # 3D visualization utilities
+ ├─ BoxplotRendering/           # 3D visualization using Blender with refraction effects
  │   ├─ render.py
  │   ├─ process_all_nii.py
  │   └─ data/
@@ -96,6 +96,11 @@ This generates synthetic contour ensembles and compares multiple depth methods:
 - **CBD**: Contour Band Depth
 - **Prob-IoU**: Probabilistic IoU-based depth
 - **ISM**: Isosurface Similarity Map depth
+
+*Note: The data generation and implementations of eID and CBD in the scatterplot matrix comparison are adapted from [paper-multimodal-contour-depth](https://github.com/chadepl/paper-multimodal-contour-depth).*
+
+**3D Rendering with Blender**:
+The `BoxplotRendering/` directory contains scripts for creating 3D visualizations of contour boxplots using Blender. These scripts generate photorealistic renderings with refraction effects.
 
 ## ✨ Method Overview
 
